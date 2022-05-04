@@ -1,0 +1,25 @@
+{
+  "name": "mini-message-board-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alesbe/mini-message-board.git"
+  },
+  "author": "alesbe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alesbe/mini-message-board/issues"
+  },
+  "homepage": "https://github.com/alesbe/mini-message-board#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.2",
+    "nodemon": "^2.0.16"
+  }
+}
