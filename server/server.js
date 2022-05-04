@@ -1,9 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
+var cors = require('cors');
 
 // Express config
 const app = express()
 
+app.use(cors());
 app.use(require("./routes/index"))
 
 // Connect MongoDB
