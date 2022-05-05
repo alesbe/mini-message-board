@@ -9,8 +9,9 @@ app.use(cors());
 app.use(require("./routes/index"))
 
 // Connect MongoDB
-const mongoPort = 27017;
-const mongoUrl = `mongodb://localhost:${mongoPort}/mini-message-board`;
+const mongoService = process.env.MONGO_SERVICE || "localhost"
+const mongoPort = process.env.MONGO_PORT || 27017;
+const mongoUrl = `mongodb://${mongoService}:${mongoPort}/mini-message-board`;
 mongoose.connect(mongoUrl, (err) => {
     if (err) throw err;
     
