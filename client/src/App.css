@@ -1,3 +1,39 @@
-.App {
+@import './theme.css';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 5rem;
   text-align: center;
+  color: var(--palette-1)
+}
+body {
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  transition: transform 0.2s;
+}
+.credits > * {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--palette-1)
+}
+.credits:hover {
+  transform: scale(1.05);
 }

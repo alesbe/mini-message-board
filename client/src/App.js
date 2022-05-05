@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react'
 import Message from './components/Message';
+import MessageForm from './components/MessageForm';
 const axios = require('axios').default;
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
     axios.get(serverUrl)
     .then((res) => {
       setMessages(res.data.messageDB);
-      console.log(messages)
     })
     .catch((err) => {
       console.log(err)
@@ -25,23 +25,30 @@ function App() {
 
   useEffect(() => {
     getMessages();
+    console.log(messages)
   }, [])
   
   return (
-    <>
-    <h1>Mini message board</h1>
-    <button onClick={() => getMessages()}>Click me to get</button>
-    
-    {
-      messages.map((message, i) => {
-        return <Message key={i}
-                title={messages[i]["title"]}
-                author={messages[i]["author"]}
-                body={messages[i]["body"]}
-                />
-      })
-    }
-    </>
+    <div className="wrapper">
+      <h1 className='title'>Mini message board</h1>
+
+      <MessageForm/>
+      
+      {
+        messages.map((message, i) => {
+          return <Message key={i}
+                  title={messages[i]["title"]}
+                  author={messages[i]["author"]}
+                  body={messages[i]["body"]}
+                  date={messages[i]["date"].slice(0, 10)}
+                  />
+        })
+      }
+
+      <div className='credits'>
+        <a href="https://github.com/alesbe"><p>Made with ❤️ by alesbe!</p></a>
+      </div>
+    </div>
   );
 }
 

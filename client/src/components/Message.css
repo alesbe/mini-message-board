@@ -1,0 +1,36 @@
+@import '../theme.css';
+
+.message__container {
+    background-color: var(--mc-background);
+    box-shadow: var(--box-shadow);
+    width:35rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+}
+.message__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message__title {
+    color: var(--mc-title);
+}
+.message__author {
+    color: var(--mc-author);
+    font-style: italic;
+}
+.message__body {
+    color: var(--mc-body);
+}
+.message__date {
+    color: var(--mc-date);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .message__container {
+        width: 80%;
+    }
+}

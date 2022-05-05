@@ -1,12 +1,15 @@
 import './Message.css';
 import React from 'react'
 
-const Message = ({ title, author, body }) => {
+const Message = ({ title, author, body, date }) => {
   return (
-    <div>
-        <h1>{title}</h1>
-        <p>{author}</p>
-        <p>{body}</p>
+    <div className='message__container'>
+        <div className='message__row'>
+          <h2 className='message__title'>{title}</h2>
+          <p className='message__author'>{author}</p>
+        </div>
+        <p className='message__body'>{body}</p>
+        <p className='message__date'>{date}</p>
     </div>
   )
 }

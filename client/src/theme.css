@@ -1,0 +1,24 @@
+:root {
+    /* Color palette (darkest to lightest) */
+    --palette-1:#EEEEEE;
+    --palette-2:#D8D2CB;
+    --palette-3:#398AB9;
+    --palette-4:#1C658C;
+
+    /* Body */
+    --background: var(--palette-4);
+    --box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+
+    /* Form */
+    --form-background: var(--palette-3);
+    --form-i-background: var(--palette-4);
+    --form-i-text: var(--palette-1);
+    --form-i-placeholder: var(--palette-2);
+
+    /* Message cards */
+    --mc-background: var(--palette-3);
+    --mc-title: var(--palette-1);
+    --mc-author: var(--palette-1);
+    --mc-body: var(--palette-1);
+    --mc-date: var(--palette-2);
+}

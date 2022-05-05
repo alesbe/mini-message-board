@@ -1,0 +1,83 @@
+@import '../theme.css';
+
+.form__container {
+    background-color: var(--form-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    width: 40rem;
+    box-shadow: var(--box-shadow);
+
+    padding: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.form__row {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.body__row {
+    height: 10rem;
+}
+input, textarea {
+    width: 100%;
+    height: 100%;
+    margin: 1rem;
+    font-size: 1rem;
+    padding: 1rem;
+    color: var(--form-i-text);
+    background-color: var(--form-i-background);
+    border: 0;
+    border-radius: 1rem;
+    resize: none;
+
+    transition: transform 0.1s;
+}
+input::placeholder, textarea::placeholder {
+    color: var(--form-i-placeholder);
+}
+button {
+    align-self: flex-end;
+    background-color: var(--form-i-text);
+    color: var(--form-i-background);
+    margin: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: 0;
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0.5rem;
+    
+    transition: transform 0.1s;
+}
+
+/* Animations */
+input:focus, textarea:focus {
+    transform: scale(1.01);
+}
+button:focus, button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .form__container {
+        width: 90%;
+    }
+    .form__row {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    input,textarea {
+        border-radius: 0.8rem;
+        width: 90%;
+    }
+}
