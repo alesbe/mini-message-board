@@ -1,0 +1,29 @@
+version: "3"
+services:
+        frontend:
+                container_name: frontend
+                build: ./client/.
+                #image: alesbe/mini-message-board-frontend:1.0
+                restart: always
+                ports:
+                        - "3000:3000"
+        backend:
+                container_name: backend
+                build: ./server/.
+                #image: alesbe/mini-message-board-backend:1.0
+                restart: always
+                environment:
+                        - MONGO_SERVICE=mongodb
+                        - MONGO_PORT=27017
+                ports:
+                        - "8000:8000"
+        mongodb:
+                container_name: mongodb
+                image: mongo
+                ports:
+                        - "27017:27017"
+                command: --quiet
+                logging:
+                        driver: "none"
+                volumes:
+                        - /message-db:/data/db
