@@ -20,6 +20,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+.response__status {
+  color: var(--palette-2);
+  font-style: italic;
+}
 
 .credits {
   display: flex;

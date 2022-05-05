@@ -5,7 +5,7 @@ import MessageForm from './components/MessageForm';
 import { useMessage } from './hooks/useMessage';
 
 function App() {
-  const { messages } = useMessage();
+  const { messages, resStatus } = useMessage();
   
   return (
     <div className="wrapper">
@@ -23,6 +23,8 @@ function App() {
                   />
         })
       }
+
+      <p className="response__status">{ resStatus }</p>
 
       <div className='credits'>
         <a href="https://github.com/alesbe"><p>Made with ❤️ by alesbe!</p></a>

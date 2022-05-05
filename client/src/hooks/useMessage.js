@@ -3,6 +3,7 @@ const axios = require('axios').default;
 
 export const useMessage = () => {
     const [messages, setMessages] = useState([])
+    const [resStatus, setResStatus] = useState("Fetching messages...")
   
     const serverUrl = "http://localhost:8000/message"
 
@@ -10,8 +11,13 @@ export const useMessage = () => {
         axios.get(serverUrl)
         .then((res) => {
             setMessages(res.data.messageDB);
+            setResStatus("")
         })
         .catch((err) => {
+            if(err.code == "ERR_NETWORK") {
+                setResStatus("Couldn't reach message server :(")
+            }
+
             console.log(err)
         })
     }
@@ -48,6 +54,7 @@ export const useMessage = () => {
     return {
         messages,
         setMessages,
+        resStatus,
         getMessages,
         createMessage
     }
