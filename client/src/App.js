@@ -2,31 +2,10 @@ import './App.css';
 import React, { useEffect, useState } from 'react'
 import Message from './components/Message';
 import MessageForm from './components/MessageForm';
-const axios = require('axios').default;
+import { useMessage } from './hooks/useMessage';
 
 function App() {
-  const [messages, setMessages] = useState([])
-  
-  const serverUrl = "http://localhost:8000/message"
-  
-  const getMessages = () => {
-    axios.get(serverUrl)
-    .then((res) => {
-      setMessages(res.data.messageDB);
-    })
-    .catch((err) => {
-      console.log(err)
-      })
-  }
-
-  const createMessage = () => {
-    
-  }
-
-  useEffect(() => {
-    getMessages();
-    console.log(messages)
-  }, [])
+  const { messages } = useMessage();
   
   return (
     <div className="wrapper">
