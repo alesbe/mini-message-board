@@ -5,7 +5,7 @@ let Message = require("../models/message")
 
 // Get all messages
 app.get('/message', (req, res) => {
-    Message.find({}).exec((err, messageDB) => {
+    Message.find({}).sort({date: -1}).exec((err, messageDB) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
