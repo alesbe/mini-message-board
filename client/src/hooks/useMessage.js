@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 const axios = require('axios').default;
 
 export const useMessage = () => {
@@ -14,7 +14,7 @@ export const useMessage = () => {
             setResStatus("")
         })
         .catch((err) => {
-            if(err.code == "ERR_NETWORK") {
+            if(err.code === "ERR_NETWORK") {
                 setResStatus("Couldn't reach message server :(")
             }
 

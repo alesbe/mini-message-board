@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Message from './components/Message';
 import MessageForm from './components/MessageForm';
 import { useMessage } from './hooks/useMessage';
