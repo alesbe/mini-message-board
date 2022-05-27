@@ -3,14 +3,12 @@ services:
         frontend:
                 container_name: frontend
                 build: ./client/.
-                #image: alesbe/mini-message-board-frontend:1.0
                 restart: always
                 ports:
                         - "3000:3000"
         backend:
                 container_name: backend
                 build: ./server/.
-                #image: alesbe/mini-message-board-backend:1.0
                 restart: always
                 environment:
                         - MONGO_SERVICE=mongodb
