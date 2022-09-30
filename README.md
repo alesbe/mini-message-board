@@ -21,7 +21,7 @@ A lightweight message board made with [MongoDB](https://www.mongodb.com/), [Expr
 ### Deployment
 - [Docker](https://www.docker.com/): Project bundler in OS-level virtualization containers to work in any environment
 
-## Run the app
+## ⚙️ Run the app
 <br>
 Default ports:
 - **Backend: `8000`**
